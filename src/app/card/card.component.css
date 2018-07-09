@@ -1,0 +1,14 @@
+.material-card{
+    width: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+    margin: 4px;
+}
+.dashboard-card {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    padding:0px;
+  }

@@ -1,0 +1,30 @@
+<div  [class]="theme">
+<div class="login-background">
+    <div [ngClass]="{'d-block':loadProgress}" class="d-none">
+        <mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar>
+    </div>
+    <div class="container-fluid" [@flyInOut]="enter">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6">
+                <div class="row">
+                    <section class="w-100 login-content p-4 m-4">
+                        <h1 class="font-weight-bold">Big Data</h1>
+                        <br>
+                        <p class="d-none d-sm-block">
+                            Big data analytics applications enable data scientists, predictive modelers, statisticians and other analytics professionals
+                            to analyze growing volumes of structured transaction data, plus other forms of data that are
+                            often left untapped by conventional business intelligence (BI) and analytics programs.
+                        </p>
+                    </section>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6">
+                <div class="row">
+                    <app-user-login *ngIf="showLogin"></app-user-login>
+                    <app-user-register *ngIf="!showLogin"></app-user-register>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<div class="col-lg-12 col-md-12 my-4">
+    <h1 class="mat-h1">Dashboard</h1>
+    <mat-grid-list [cols]="gridSize" rowHeight="100px">
+        <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+            <mat-card class="dashboard-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            {{card.title}}
+                            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                                <mat-icon class="more"></mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu" xPosition="before">
+                                <button mat-mini-fab class="expand m-1" (click)="expandCard(card.id,'row')" color="accent"></button>
+                                <button mat-mini-fab class="shrink m-1" (click)="shrinkCard(card.id,'row')"></button>
+                                <span class="m-1 p-2 resize">|</span>
+                                <button mat-mini-fab class="expand m-1" (click)="expandCard(card.id,'col')"></button>
+                                <button mat-mini-fab class="shrink m-1" (click)="shrinkCard(card.id,'col')"></button>
+                            </mat-menu>
+                        </mat-card-title>
+                    </mat-card-header>
+                <mat-card-content class="dashboard-card-content">
+                    <div>{{ isHandset }}Card Content Here
+                        <!-- <img mat-card-image [src]="card.src" [matTooltip]="card.title"> -->
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

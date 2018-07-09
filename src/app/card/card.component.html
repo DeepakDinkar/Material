@@ -1,0 +1,21 @@
+<mat-grid-list cols="6" rowHeight="100px">
+    <mat-grid-tile colspan="3" rowspan="1">
+        <mat-card *ngFor="let card of data" class="dashboard-card" style="background: yellowgreen">
+            <mat-card-header>
+                <mat-card-title>
+                    card.title
+                    <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+                        <mat-icon class="more"></mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="before">
+                        <button mat-menu-item class="nounderline font h6">Expand</button>
+                        <button mat-menu-item class="nounderline font h6">Remove</button>
+                    </mat-menu>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="dashboard-card-content">
+                <div>Card Content Here</div>
+            </mat-card-content>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

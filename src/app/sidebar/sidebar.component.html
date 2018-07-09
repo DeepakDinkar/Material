@@ -1,0 +1,109 @@
+<div [class]="theme">
+    <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav #drawer class="sidenav primary" fixedInViewport="true" [mode]="'navigation'">
+            <mat-toolbar color="accent" class="menu" style="align-items: baseline !important;height:230px">
+                <div class="w-50 rounded-circle bg-light pull-left my-3" style="height:60% !important;">
+                    <img class="img-fluid rounded-circle w-100 h-100" src="../../assets/hints/profile.jpg">
+                    <div class="pull-right m-2">Scarelett Johnson
+                        <br>
+                        <span style="font-size:13px; bottom: 12px" class="position-relative b-4">scarelett.john90@gmail.com</span>
+                    </div>
+                </div>
+            </mat-toolbar>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <img src="../../assets/icons/dashboard_black_medium.png">
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Dashboard
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-slider color="primary" thumbLabel="true" min="4" max="10" [value]="gridSize" (input)="changeGridSize($event)">
+                </mat-slider>
+                <span class="float-right m-3 font-weight-bold rounded">Grid Size</span>
+                <mat-toolbar>
+                    <button mat-mini-fab class="mx-1" style="background: #0277BD;" (click)="changeTheme('indigo')"></button>
+                    <button mat-mini-fab class="mx-2" style="background: #43A047;" (click)="changeTheme('green')"></button>
+                    <button mat-mini-fab class="mx-2" style="background: #F44336;" (click)="changeTheme('red')"></button>
+                    <button mat-mini-fab class="mx-1" style="background: #FFA726;" (click)="changeTheme('orange')"></button>
+                </mat-toolbar>
+            </mat-expansion-panel>
+            <mat-nav-list>
+                <a mat-list-item href="#">
+                    <span class="font-white mx-4">Link 1{{isHandset | async}}</span>
+                </a>
+                <a mat-list-item href="#">
+                    <span class="font-white mx-4">Link 2</span>
+                </a>
+                <a mat-list-item href="#">
+                    <span class="font-white mx-4">Link 3</span>
+                </a>
+                <a mat-list-item href="#">
+                    <span class="font-white mx-4">Link 4</span>
+                </a>
+            </mat-nav-list>
+            <mat-list style="position: relative;top:20%;">
+                <div class="mx-4" style="background: whitesmoke;box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);">
+                    <mat-list-item>
+                        <div class="w-100">
+                            <img src="../../assets/icons/facebook-logo.png">
+                            <span class="font-weight-bold mx-3" style="font-size: 13px">Facebook</span>
+                            <img src="../../assets/icons/twitter-logo.png">
+                            <span class=" font-weight-bold mx-3" style="font-size: 13px">Twitter</span>
+                        </div>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <div class="w-100 ">
+                            <img src="../../assets/icons/linkedin-logo.png">
+                            <span class="font-weight-bold mx-3" style="font-size: 13px">LinkedIn</span>
+                            <img src="../../assets/icons/google-plus-logo.png">
+                            <span class="font-weight-bold mx-3" style="font-size: 13px">Google+</span>
+                        </div>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <div class="w-100 ">
+                            <img src="../../assets/icons/instagram-logo.png">
+                            <span class="font-weight-bold mx-3" style="font-size: 13px">Instagram</span>
+                        </div>
+                    </mat-list-item>
+                </div>
+            </mat-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="container-fluid p-0 box-shadow position-fixed">
+                <div class="row">
+                    <mat-toolbar color="primary">
+                        <button class="mx-3 menu-bar" type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                        </button>
+                        <div class="w-100 mx-4">
+                            <div class="float-right font h2 mx-3 main-logo" matTooltip="Coming Soon"></div>
+                            <div class="h3 font float-right d-none d-sm-block">
+                                <button mat-button class="font font-weight-bold" [ngClass]="{'accent-bg':'main'===active}" (click)="route('main')">Home</button>
+                                <button mat-button class="font font-weight-bold" [ngClass]="{'accent-bg':'chat'===active}" (click)="route('chat')">Chats</button>
+                                <button mat-button class="font font-weight-bold" [ngClass]="{'accent-bg':'social'===active}" (click)="route('social')">Social</button>
+                                <button mat-button class="font font-weight-bold">About</button>
+                            </div>
+                        </div>
+                    </mat-toolbar>
+                </div>
+            </div>
+            <div class="main" [@flyInOut]="getPage(appOutlet)">
+                <router-outlet #appOutlet="outlet"></router-outlet>
+            </div>
+
+            <!-- <table class="w-75 m-4 h-75"></table>  -->
+            <div>
+                <mat-select>
+                    <mat-form-field>
+                        <input matInput type="text">
+                    </mat-form-field>
+                    <mat-option value="1">1</mat-option>
+                    <mat-option value="2">2</mat-option>
+                    <mat-option value="3">3</mat-option>
+                    <mat-option value="4">4</mat-option>
+                </mat-select>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

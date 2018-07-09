@@ -1,0 +1,16 @@
+.forget-pwd{
+    font-size: 14px;
+    color: #ff4081;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login {
+    position: absolute;
+    border: 30px solid #f8f9fa;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+    margin: 4px;
+    height: auto;
+    margin: 250px 0px 0px 0px;
+    flex-direction: column;
+  }

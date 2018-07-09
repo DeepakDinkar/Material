@@ -1,0 +1,86 @@
+<div class="mat-elevation-z8">
+    <mat-paginator #paginator [length]="dataSource.data.length" [pageIndex]="0" [pageSize]="10" [showFirstLastButtons]="true">
+    </mat-paginator>
+    <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef>
+                <mat-form-field>
+                    <mat-select placeholder="Id">
+                        <mat-option value="1">1</mat-option>
+                        <mat-option value="2">2</mat-option>
+                        <mat-option value="3">3</mat-option>
+                        <mat-option value="4">4</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef>Status
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.status}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <a href="#">
+                    <u>{{row.name}}</u>
+                </a>
+            </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="seats">
+            <mat-header-cell *matHeaderCellDef>Seats</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.seats}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="trunks">
+            <mat-header-cell *matHeaderCellDef>Trunks</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.trunks}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="DID">
+            <mat-header-cell *matHeaderCellDef>DID</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.DID}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="location">
+            <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.location}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="edit">
+            <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <a href="">
+                    <u>{{row.edit}}</u>
+                </a>
+            </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button type="button" class="close mx-4" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
