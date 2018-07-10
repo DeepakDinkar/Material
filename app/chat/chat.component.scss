@@ -1,0 +1,45 @@
+
+.grid-container {
+  height: 200px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  padding: 0px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+.s-cut {
+  position: relative;
+  width: 0px;
+  height: 0px;
+  float: right;
+  left: 17px;
+  top: 8px;
+  border-bottom: 4px solid white;
+  border-top: 26px solid transparent;
+  border-left: 30px solid white;
+}
+.r-cut {
+  position: relative;
+  width: 20px;
+  height: 30px;
+  float: left;
+  right: 15px;
+  bottom: 8px;
+  border-top: 4px solid #ff4081;
+  border-bottom: 25px solid transparent;
+  border-right: 19px solid #ff4081;
+}

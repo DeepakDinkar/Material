@@ -1,0 +1,35 @@
+<div class="login w-75 bg-light pull-right d-flex mx-4">
+    <div class="login-header pb-4 mb-4">
+        <span class="float-right forget-pwd accent" (click)="login()">Login</span>
+        <h3>
+            <b>Register</b>
+        </h3>
+    </div>
+    <mat-form-field>
+        <mat-label>
+            <b class="font text-monospace my-4">USER NAME</b>
+        </mat-label>
+        <input matInput type="text" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            <b class="font text-monospace my-4">EMAIL</b>
+        </mat-label>
+        <input matInput type="email" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            <b class="font text-monospace my-4">PASSWORD</b>
+        </mat-label>
+        <input matInput type="password" required>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>
+            <b class="font text-monospace my-4">RE-ENTER PASSWORD</b>
+        </mat-label>
+        <input matInput type="password" required>
+    </mat-form-field>
+    <div class="mt-4">
+        <button mat-raised-button color="primary" class="d-inline-block font" (click)="submit()">Register</button>
+    </div>
+</div>
